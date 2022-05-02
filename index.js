@@ -1,11 +1,10 @@
 
 const express = require('express');
+require('dotenv').config();
 const app = express();
-const PORT = 4000;
+const { PORT } = process.env;
 
 app.use(express.static('public'));
-
-
-app.listen(PORT || 3000, () => {
+app.listen(PORT, () => {
     console.log(`Proyecto Miguel escuchando en el puerto ${ PORT }`);
 });
